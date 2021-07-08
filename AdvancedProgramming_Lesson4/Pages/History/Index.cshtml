@@ -1,0 +1,48 @@
+﻿@page
+@model AdvancedProgramming_Lesson4.Pages.History.IndexModel
+
+@{
+    ViewData["Title"] = "Messages";
+}
+
+<h1>Messages</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Messages[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Messages[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Messages[0].Message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Messages[0].Authenticated)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Messages) {
+
+    if(item.Authenticated){
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Authenticated)
+            </td>
+        </tr>
+    }
+}
+
+    </tbody>
+</table>
